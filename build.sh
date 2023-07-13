@@ -1,5 +1,5 @@
 #!/bin/sh
 cd ../
 mkdir output
-cp -R ./memorip-frontend/* ./output
-cp -R ./output ./memorip-frontend/
+cp -R ./client/* ./output
+cp -R ./output ./client/
