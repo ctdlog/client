@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+    https://github.com/tailwindlabs/tailwindcss/discussions/2394
+    https://github.com/tailwindlabs/tailwindcss/pull/5732
+*/
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@font-face {
+  font-family: var(--font-notoSansKr);
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+AC00-D7AF;
+}
+
+@font-face {
+  font-family: var(--font-poppins);
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+0020-007E;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: var(--font-notoSansKr), var(--font-poppins), sans-serif;
+}
