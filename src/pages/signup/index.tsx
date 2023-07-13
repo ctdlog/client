@@ -2,10 +2,9 @@ import { useState } from 'react'
 
 import { FormProvider, useForm } from 'react-hook-form'
 
-import EmailVerification from '@/pages/signup/_components/EmailVerification'
-import { STEP, type Step } from '@/pages/signup/signup.constants'
-
-import SignUpForm from './_components/SignUpForm'
+import EmailVerification from '@/components/views/signup/components/EmailVerification'
+import SignUpForm from '@/components/views/signup/components/SignUpForm'
+import { STEP, type Step } from '@/components/views/signup/constants'
 
 export interface FormValues {
   email: string
