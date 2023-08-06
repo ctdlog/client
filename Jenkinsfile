@@ -17,9 +17,9 @@ pipeline {
         stage('Check and Kill Process on Port 3000') {
             steps {
                 script {
-                    def pid = sh(script: "lsof -ti :3000", returnStdout: true).trim()
+                    def pid = sh(script: 'lsof -ti :3000', returnStatus: true, returnStdout: true).trim()
                     if (pid) {
-                        sh "kill -9 ${pid}"
+                        sh "kill -9 $pid"
                     }
                 }
             }
