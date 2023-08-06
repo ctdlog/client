@@ -18,7 +18,6 @@ pipeline {
             steps {
                 script {
                     def result = sh(script: 'lsof -ti :3000', returnStatus: true, returnStdout: true)
-                    def pid = result?.trim()
                     if (pid?.isInteger()) {
                         sh "kill -9 $pid"
                     }
