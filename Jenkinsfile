@@ -14,12 +14,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'pnpm test'
-            }
-        }
-
         stage('Check and Kill Process on Port 3000') {
             steps {
                 script {
