@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Memorip</title>
+        <title>Fire Planner</title>
       </Head>
       <Providers>
         <main className={clsx(notoSansKr.className, poppins.className)}>

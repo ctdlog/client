@@ -157,7 +157,7 @@ const SignUpForm = ({ setStep }: Props) => {
                   </div>
                 </div>
                 <small className='text-zinc-600' role='alert'>
-                  영문 대소문자, 숫자, 특수문자 포함 8자리 이상을 입력해주세요.
+                  영문 소문자, 숫자 포함 8자리 이상을 입력해주세요.
                 </small>
                 <small className='text-red-600' role='alert'>
                   {errors.password?.message}
