@@ -18,7 +18,9 @@ pipeline {
             steps {
                 script {
                     def pid = sh(script: 'lsof -ti :3000', returnStdout: true)
+                    echo "PID: $pid"
                     if (pid) {
+                        echo "PID: $pid 가 실행중이어서 종료합니다."
                         sh "kill -9 $pid"
                     }
                 }
