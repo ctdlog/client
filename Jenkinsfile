@@ -21,7 +21,7 @@ pipeline {
                     if (result != 0) {
                         echo "No process is running on port 3000"
                     } else {
-                        def pid = result.trim()  // remove any leading/trailing white spaces
+                        def pid = sh(script: 'lsof -ti :3000', returnStdout: true)
                         echo "PID: $pid is running and will be terminated"
                         sh "kill -9 $pid"
                     }
