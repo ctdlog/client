@@ -17,7 +17,6 @@ pipeline {
         stage('Check and Kill Process on Port 3000') {
             steps {
                 script {
-                    echo "asdasdasdasd"
                     def result = sh(script: 'lsof -ti :3000', returnStdout: true, returnStatus: true)
                     if (result != 0) {
                         echo "No process is running on port 3000"
