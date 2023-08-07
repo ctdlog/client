@@ -17,10 +17,13 @@ pipeline {
         stage('Check and Kill Process on Port 3000') {
             steps {
                 script {
-                    def pid = sh(script: 'lsof -ti :3000', returnStdout: true)
-                    echo "PID: $pid"
-                    if (pid) {
-                        echo "PID: $pid 가 실행중이어서 종료합니다."
+                    echo "asdasdasdasd"
+                    def result = sh(script: 'lsof -ti :3000', returnStdout: true, returnStatus: true)
+                    if (result != 0) {
+                        echo "No process is running on port 3000"
+                    } else {
+                        def pid = result.trim()  // remove any leading/trailing white spaces
+                        echo "PID: $pid is running and will be terminated"
                         sh "kill -9 $pid"
                     }
                 }
