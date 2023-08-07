@@ -31,7 +31,7 @@ pipeline {
 
         stage('Start in Background') {
             steps {
-                sh 'nohup pnpm start > /dev/null 2>&1 &'
+                sh 'JENKINS_NODE_COOKIE=dontKillMe && nohup pnpm start > /dev/null 2>&1 &'
             }
         }
     }
